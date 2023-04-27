@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+{% for mess in messages %}
+<h1 style="color:red; font-size:14px; font-weight: bold;">{{ mess }}</h1>
+{% endfor %}
+{% endif %}
+    <!-- todo list start -->
+<div class="container-sm-12">
+    <div class="header-sm-12">
+    <p class="header-sm-6">Your awosome todo list</p>
+    <p class="datetime-sm-6">Date :</p>
+</div>
+<div class="input-sm12">
+    <form action="">
+        <input type="text" name="add" placeholder="what do you want to do today?">
+        <button type="submit">Add</button>
+    </form>
+</div>
+
+<!-- todo display list start from here  -->
+
+<div class="todo-display-sm-12">
+    <div class="todo-list">
+        <div class="list-sm-8">
+        <p class="serial-number" style="margin-left: 0px; width: 5px; margin-right: 7px; font-family: 'Lato', sans-serif;">1. </p>
+        <input type="checkbox" name="complete">
+        <p>this is todo this this is this is my first awosome todo list from the list</p>
+        </div>
+        
+        <div class="edit-delete-sm3">
+            <button type="button" class="btn btn-info"><a href="edit-todo.html" style="text-decoration: none; color: white;">Edit</a></button>
+            <!-- if completed is True:
+           .list-sm-8 p{
+            font-size: 15px;
+            margin-left: 20px;
+            font-family: 'Roboto', sans-serif;
+            text-decoration:line-through;
+        } -->
+            <button type="button" class="btn btn-danger"><a href="" style="text-decoration: none; color:white;">Delete</a></button>
+        </div>
+        
+    </div>
+    <hr>
+</div>
+<!-- todo display list end  -->
+</div>
+    <!-- todo list end -->
+
+
+
+    {% endblock content %}
